@@ -2,10 +2,13 @@
 
 Một hệ thống toàn diện để phát hiện Bill of Materials (BOM), trích xuất văn bản (OCR) và sửa lỗi chính tả sử dụng Faster R-CNN, GLM, và Google Gemini API.
 
-[![Python Version](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Jupyter Notebook](https://img.shields.io/badge/98.8%25-Jupyter%20Notebook-orange.svg)]()
-[![Python](https://img.shields.io/badge/1.2%25-Python-blue.svg)]()
+[![Python Version](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)](https://www.python.org/downloads/)
+[![Open In Colab](https://img.shields.io/badge/Open%20in-Colab-orange?logo=googlecolab&logoColor=white)]()
+[![Pytesseract](https://img.shields.io/badge/OCR-Pytesseract-green?logo=tesseract&logoColor=white)]()
+[![Faster R-CNN](https://img.shields.io/badge/Detection-Faster%20R--CNN-red?logo=pytorch&logoColor=white)]()
+[![GLM](https://img.shields.io/badge/LLM-GLM-purple?logo=openai&logoColor=white)]()
+[![Google Gemini](https://img.shields.io/badge/API-Google%20Gemini-blue?logo=google&logoColor=white)]()
+[![Computer Vision](https://img.shields.io/badge/Field-Computer%20Vision-orange?logo=opencv&logoColor=white)]()
 
 ---
 
@@ -15,7 +18,7 @@ Một hệ thống toàn diện để phát hiện Bill of Materials (BOM), trí
 - [Các Tính Năng](#các-tính-năng)
 - [Cài Đặt](#cài-đặt)
 - [Hướng Dẫn Sử Dụng](#hướng-dẫn-sử-dụng)
-- [Kết Quả](#kết-quả)
+- [Báo cáo ngắn](#báo-cáo-ngắn)
 - [Demo & Tài Nguyên](#demo--tài-nguyên)
 - [Đánh Giá](#đánh-giá)
 - [Ghi Chú](#ghi-chú)
@@ -138,7 +141,6 @@ Truy cập: `http://localhost:7860`
 
 ---
 
-## 📊 Kết Quả
 ## 📊 Báo cáo ngắn
 
 ### 1️⃣ Cách tiếp cận
