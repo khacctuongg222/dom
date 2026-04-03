@@ -144,6 +144,6 @@ python app.py
 ---
 
 ## 📝 Ghi chú
-- Dự án sử dụng chủ yếu **Jupyter Notebook** (98.8%) và **Python** (1.2%)
+- Dự án sử dụng chủ yếu  **Python**
 - Khuyến nghị sử dụng GPU cho quá trình huấn luyện
-- Để cải thiện tốc độ inference, hãy xem xét sử dụng GPU hoặc quantization model
+- Để cải thiện tốc độ inference, hãy xem xét sử dụng GPU 
