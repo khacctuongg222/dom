@@ -179,30 +179,6 @@ Truy cập: `http://localhost:7860`
 - Web demo chạy trên CPU nên tốc độ được tối ưu hơn
 
 ### 2. Kết quả thử nghiệm
-**Detection:**
-
-   **Backbone:** ResNet-50
-   
-   **Kết quả tốt nhất (sau 34 epochs):**
-   - **mAP@0.5:0.95:** 0.7449
-   - **mAP@0.5:** 0.9236
-   - **mAR@100:** 0.8136
-   - **Loss:** 0.0723
-   
-   **Biểu đồ quá trình huấn luyện:**
-   
-   ![Loss Curve](https://github.com/user-attachments/assets/29b48133-4bec-4d07-bf9f-0cf158d999af)
-   
-   ![Training Metrics](https://github.com/user-attachments/assets/2551d60c-376e-448b-a847-87666040f511)
-   
-   **Kết quả kiểm thử mô hình:**
-   - Mô hình hoạt động ổn định với các vùng gán nhãn: PartDrawing, Note, Table
-   
-   ![Test Result 1](https://github.com/user-attachments/assets/5fe16546-01aa-476b-a0c4-92bcde49f641)
-   
-   ![Test Result 2](https://github.com/user-attachments/assets/f3e44823-a1cd-41f5-be0f-c638674adb6e)
-   
-   ---
 
 **OCR & Xử lý ngôn ngữ:**
 Hệ thống khi hoạt động riêng lẻ không qua nhiều bước thì hoạt động tốt (đưa trực tiếp bảng hoặc ảnh ghi chú vào) tuy nhiên sau khi qua pipeline hoàn chỉnh từ  Detection đến OCR ảnh bị giảm chất lượng làm cho kết quả đầu ra không tốt bằng. Đường dẫn đến Web mẫu [https://huggingface.co/spaces/khac-tuong-222/ocr]
