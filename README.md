@@ -1,4 +1,4 @@
-<img width="1595" height="567" alt="image" src="https://github.com/user-attachments/assets/b2167902-dd2d-45e9-a46f-f288bf370dbe" /># 📋 BOM Object Detection & OCR System
+# 📋 BOM Object Detection & OCR System
 
 Hệ thống phát hiện BOM (Bill of Materials) và trích xuất OCR sử dụng mô hình Faster R-CNN ResNet50, GLM, kết hợp API Google Gemini để sửa lỗi chính tả và thuật ngữ.
 
@@ -197,7 +197,8 @@ Kết quả sau khi xử lý với gemini:
     Ảnh đầu vào:
    <img width="870" height="490" alt="image" src="https://github.com/user-attachments/assets/1650a32f-a5f8-44b1-b698-b15c811bb34f" />
    Kết quả detection: 
-   <img width="1564" height="554" alt="image" src="https://github.com/user-attachments/assets/0ab6c2fe-56c9-437c-afb1-2d6c1bf78297" />
+  <img width="1497" height="442" alt="image" src="https://github.com/user-attachments/assets/94d5f575-ec78-4fac-8a0a-26c8a202d08c" />
+
    Kết quả ocr:
    <img width="1509" height="840" alt="image" src="https://github.com/user-attachments/assets/12dba988-dd8f-4974-96da-057f570ba500" />
    <img width="359" height="122" alt="image" src="https://github.com/user-attachments/assets/c170a738-8db7-40c7-89c9-163875235761" />
