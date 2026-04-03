@@ -117,7 +117,7 @@ python app.py
 **Cách 2 - Ghi Trực Tiếp trong Code**
 ```python
 # Trong file app.py
-GEMINI_API_KEY = "your_api_key_here"
+API_KEY = os.getenv("GEMINI_API_KEY", "")
 ```
 
 #### Chạy Ứng Dụng
@@ -141,7 +141,7 @@ Truy cập: `http://localhost:7860`
 ## 📊 Kết Quả
 ## 📊 Báo cáo ngắn
 
-### 1. Cách tiếp cận
+### 1️⃣ Cách tiếp cận
 
 **Detection:**
 - Sử dụng Faster R-CNN vì khả năng chính xác cao trong việc xác định các vùng đối tượng nhỏ và phức tạp trong bản vẽ kỹ thuật
@@ -151,8 +151,9 @@ Truy cập: `http://localhost:7860`
 - Sử dụng các mô hình ngôn ngữ lớn (Gemini/GLM) để trích xuất thông tin ngữ cảnh
 - Web demo chạy trên CPU nên tốc độ được tối ưu hơn
 
-### 2. Kết quả thử nghiệm
- ### Detection:
+### 2️⃣ Kết quả thử nghiệm
+
+### Detection:
  **Detection Performance (Faster R-CNN)**
      
    | Metric | Giá Trị |
@@ -173,26 +174,38 @@ Truy cập: `http://localhost:7860`
 ---
 
 
-## OCR & Xử lý ngôn ngữ:**
+## OCR & Xử lý ngôn ngữ:
+
 Hệ thống khi hoạt động riêng lẻ không qua nhiều bước thì hoạt động tốt (đưa trực tiếp bảng hoặc ảnh ghi chú vào) tuy nhiên sau khi qua pipeline hoàn chỉnh từ  Detection đến OCR ảnh bị giảm chất lượng làm cho kết quả đầu ra không tốt bằng. Đường dẫn đến Web mẫu [https://huggingface.co/spaces/khac-tuong-222/ocr]
 
-Với thử nghiệm từ tệp OUTPUT kết quả trích xuất trực tiếp với bảng và ghi chú như sau:
-Kết quả xử lý bảng: 
+**Với thử nghiệm từ tệp OUTPUT kết quả trích xuất trực tiếp với bảng và ghi chú như sau:**
 
-Ảnh đầu vào:
-<img width="1485" height="828" alt="image" src="https://github.com/user-attachments/assets/41bd97e6-f98d-4bb7-85ab-7e6d54a7fc96" />
-Ảnh kết quả xuất sang PDF:
-<img width="1902" height="875" alt="image" src="https://github.com/user-attachments/assets/d1ee1f5f-d4dd-4225-9602-f135ed22c43e" />
+**Kết quả xử lý bảng:** 
 
-Kết quả trước khi xử lý với gemini: 
+- Ảnh đầu vào:
+  
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/41bd97e6-f98d-4bb7-85ab-7e6d54a7fc96" />
+
+- Ảnh kết quả xuất sang PDF:
+
+<img width="1000" height= "600" alt="image" src="https://github.com/user-attachments/assets/d1ee1f5f-d4dd-4225-9602-f135ed22c43e" />
+
+- Kết quả trước khi xử lý với gemini: 
+
 <table class="table table-bordered"><thead><tr><th>14</th><th colspan="3">Bọc lột</th><th>3</th><th>Đóng manh</th><th></th></tr></thead><tbody><tr><td>13</td><td colspan="3">Vòng đềm</td><td>1</td><td>Thép CT3</td><td></td></tr><tr><td>12</td><td colspan="3">Chở truy Sné=55</td><td>2</td><td>Thép CT3</td><td></td></tr><tr><td>11</td><td colspan="3">Vít M6=50</td><td>6</td><td>Thép CT3</td><td></td></tr><tr><td>10</td><td colspan="3">Bu.lông M4=20</td><td>1</td><td>Thép CT3</td><td></td></tr><tr><td>9</td><td colspan="3">Vòng đềm vénnh</td><td>1</td><td>Thép 651</td><td></td></tr><tr><td>8</td><td colspan="3">Then bảng 4=4=14</td><td>1</td><td>Thép CT3</td><td></td></tr><tr><td>7</td><td colspan="3">Gòng chén</td><td>1</td><td>Thép CT3</td><td></td></tr><tr><td>6</td><td colspan="3">Chở chén</td><td>1</td><td>Số day</td><td></td></tr><tr><td>5</td><td colspan="3">Bọc lột</td><td>1</td><td>Đóng manh</td><td></td></tr><tr><td>4</td><td colspan="3">Giá độ</td><td>1</td><td>Gang 15-32</td><td></td></tr><tr><td>3</td><td colspan="3">Bánh răng</td><td>2</td><td>Thép 45</td><td>M=32×12</td></tr><tr><td>2</td><td colspan="3">Hệp bánh răng</td><td>1</td><td>Gang 15-32</td><td></td></tr><tr><td>1</td><td colspan="3">NĐô</td><td>1</td><td>Gang 15-32</td><td></td></tr><tr><td>Vịnh</td><td colspan="3">Tên cál hét mày</td><td>Số lg</td><td>VĐt lleu</td><td>Đài chữ</td></tr><tr><td colspan="2">Bán gốc</td><td>L.X</td><td>cū</td><td rowspan="2" colspan="3">BỒM BÁNH RẂNG</td></tr><tr><td colspan="2">Con chữ</td><td>*746</td><td>1.99</td></tr><tr><td colspan="4">Bố mn Hình hoa .VKT<br>Đgi học Bách khoa Há nghi</td><td colspan="2">Bẃn Vē LẖP SÓ 3</td><td>Tý 1ê<br>1:1</td></tr></tbody></table>
-Kết quả sau khi xử lý với gemini:
-<table class="table table-bordered"><thead><tr><th>14</th><th colspan="3">Bọc lót</th><th>3</th><th>Đồng thau</th><th></th></tr></thead><tbody><tr><td>13</td><td colspan="3">Vòng đệm</td><td>1</td><td>Thép CT3</td><td></td></tr><tr><td>12</td><td colspan="3">Chốt truyø s6=55</td><td>2</td><td>Thép CT3</td><td></td></tr><tr><td>11</td><td colspan="3">Vít M6×50</td><td>6</td><td>Thép CT3</td><td></td></tr><tr><td>10</td><td colspan="3">Bu.lông M4×20</td><td>1</td><td>Thép CT3</td><td></td></tr><tr><td>9</td><td colspan="3">Vòng đệm vênh</td><td>1</td><td>Thép 651</td><td></td></tr><tr><td>8</td><td colspan="3">Then phẳng 4×4×14</td><td>1</td><td>Thép CT3</td><td></td></tr><tr><td>7</td><td colspan="3">Gối chén</td><td>1</td><td>Thép CT3</td><td></td></tr><tr><td>6</td><td colspan="3">Chốt chén</td><td>1</td><td>Sắt dây</td><td></td></tr><tr><td>5</td><td colspan="3">Bọc lót</td><td>1</td><td>Đồng thau</td><td></td></tr><tr><td>4</td><td colspan="3">Giá đỡ</td><td>1</td><td>Gang 15-32</td><td></td></tr><tr><td>3</td><td colspan="3">Bánh răng</td><td>2</td><td>Thép 45</td><td>M=3×12</td></tr><tr><td>2</td><td colspan="3">Hộp bánh răng</td><td>1</td><td>Gang 15-32</td><td></td></tr><tr><td>1</td><td colspan="3">Đồ gá</td><td>1</td><td>Gang 15-32</td><td></td></tr><tr><td>Vịnh</td><td colspan="3">Tên chi tiết máy</td><td>Số lg</td><td>Vật liệu</td><td>Đài chữ</td></tr><tr><td colspan="2">Bản gốc</td><td>L.X</td><td>cũ</td><td rowspan="2" colspan="3">BỐM BÁNH RĂNG</td></tr><tr><td colspan="2">Con chữ</td><td>*746</td><td>1.99</td></tr><tr><td colspan="4">Bố trí Hình hoa .VKT<br>Đại học Bách khoa Hà nội</td><td colspan="2">Bản vẽ LHP SÓ 3</td><td>Tỷ lệ<br>1:1</td></tr></tbody></table>
-Kết quả xử lý ghi chú: 
 
-Ảnh đầu vào:
-<img width="1485" height="828" alt="image" src="https://github.com/user-attachments/assets/6a055e16-cc36-46b4-9f14-c1fb45abd027" />
-Kết quả trước khi xử lý với gemini: 
+- Kết quả sau khi xử lý với gemini:
+
+<table class="table table-bordered"><thead><tr><th>14</th><th colspan="3">Bọc lót</th><th>3</th><th>Đồng thau</th><th></th></tr></thead><tbody><tr><td>13</td><td colspan="3">Vòng đệm</td><td>1</td><td>Thép CT3</td><td></td></tr><tr><td>12</td><td colspan="3">Chốt truyø s6=55</td><td>2</td><td>Thép CT3</td><td></td></tr><tr><td>11</td><td colspan="3">Vít M6×50</td><td>6</td><td>Thép CT3</td><td></td></tr><tr><td>10</td><td colspan="3">Bu.lông M4×20</td><td>1</td><td>Thép CT3</td><td></td></tr><tr><td>9</td><td colspan="3">Vòng đệm vênh</td><td>1</td><td>Thép 651</td><td></td></tr><tr><td>8</td><td colspan="3">Then phẳng 4×4×14</td><td>1</td><td>Thép CT3</td><td></td></tr><tr><td>7</td><td colspan="3">Gối chén</td><td>1</td><td>Thép CT3</td><td></td></tr><tr><td>6</td><td colspan="3">Chốt chén</td><td>1</td><td>Sắt dây</td><td></td></tr><tr><td>5</td><td colspan="3">Bọc lót</td><td>1</td><td>Đồng thau</td><td></td></tr><tr><td>4</td><td colspan="3">Giá đỡ</td><td>1</td><td>Gang 15-32</td><td></td></tr><tr><td>3</td><td colspan="3">Bánh răng</td><td>2</td><td>Thép 45</td><td>M=3×12</td></tr><tr><td>2</td><td colspan="3">Hộp bánh răng</td><td>1</td><td>Gang 15-32</td><td></td></tr><tr><td>1</td><td colspan="3">Đồ gá</td><td>1</td><td>Gang 15-32</td><td></td></tr><tr><td>Vịnh</td><td colspan="3">Tên chi tiết máy</td><td>Số lg</td><td>Vật liệu</td><td>Đài chữ</td></tr><tr><td colspan="2">Bản gốc</td><td>L.X</td><td>cũ</td><td rowspan="2" colspan="3">BỐM BÁNH RĂNG</td></tr><tr><td colspan="2">Con chữ</td><td>*746</td><td>1.99</td></tr><tr><td colspan="4">Bố trí Hình hoa .VKT<br>Đại học Bách khoa Hà nội</td><td colspan="2">Bản vẽ LHP SÓ 3</td><td>Tỷ lệ<br>1:1</td></tr></tbody></table>
+
+**Kết quả xử lý ghi chú:** 
+
+- Ảnh đầu vào:
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/6a055e16-cc36-46b4-9f14-c1fb45abd027" />
+
+- Kết quả trước khi xử lý với gemini:
+  
       "
       Thuyết mianh : Thần bom góm các chi tiệt may chinh la
       pia do 4, hóp bánh răng 2 và náp 1, chùng duqc ghép
@@ -210,42 +223,56 @@ Kết quả trước khi xử lý với gemini:
       Các bác lột 5 và 14 là các ó trupt ô dâu hai truc -
       Các ch肘 6,7 dung dé chên khít không cho chât läng
       rô rì ra ngoài. "
-Kết quả sau khi xử lý với gemini:
+  
+- Kết quả sau khi xử lý với gemini:
+
       "Thuyết minh: Thân bom gồm các chi tiết chính là vỏ bom 4, hộp bánh răng 2 và nắp 1, chúng được ghép khít với nhau bằng hai chốt định vị 12 và ổ vít 11.
-      Trong hộp bánh răng 2 có hai trục 15 và 17, trên đó lần lượt chất hai bánh răng 3: bánh răng chủ động ở trên và bánh răng bị động ở dưới; cặp bánh răng này quay nhờ chuyển động của bánh răng bên ngoài (về        bằng nét hai chém gạch mảnh, lắp ở chỗ then ổ).
-      Các bánh răng 3 quay nhanh theo chiều mũi tên sẽ tạo ra sức hút từ lỗ phía sau bom để kéo chất lỏng vào các kẽ răng; sau đó, chất lỏng chuyển theo các kẽ răng này qua lỗ ra phía trước. Cứ thế, chất lỏng          được hút và đẩy lên tức qua bom với áp lực lớn.
+      Trong hộp bánh răng 2 có hai trục 15 và 17, trên đó lần lượt chất hai bánh răng 3: bánh răng chủ động ở trên và bánh răng bị động ở dưới; cặp bánh răng
+      này quay nhờ chuyển động của bánh răng bên ngoài (về        bằng nét hai chém gạch mảnh, lắp ở chỗ then ổ).
+      Các bánh răng 3 quay nhanh theo chiều mũi tên sẽ tạo ra sức hút từ lỗ phía sau bom để kéo chất lỏng vào các kẽ răng; sau đó,
+      chất lỏng chuyển theo các kẽ răng này qua lỗ ra phía trước. Cứ thế, chất lỏng          được hút và đẩy lên tức qua bom với áp lực lớn.
       Các bạc lót 5 và 14 là các ổ trục ở đầu hai trục.
       Các chốt 6, 7 dùng để chặn khít không cho chất lỏng rò rỉ ra ngoài."
-      
 
-**Toàn bộ hệ thống Detection & OCR:**
+## Toàn bộ hệ thống Detection & OCR:**
 
    **Kết quả quả thử nghiệm với ảnh có độ nét cao**
 
-   Ảnh đầu vào:
-   <img width="977" height="692" alt="image" src="https://github.com/user-attachments/assets/52764366-8f75-4ac0-8624-08eaf120a897" />
-   Kết quả detection: 
-   <img width="1595" height="567" alt="image" src="https://github.com/user-attachments/assets/3fb88c44-cbfa-4155-b1eb-12eef996f935" />
-   Kết quả ocr:
-   <img width="1489" height="674" alt="image" src="https://github.com/user-attachments/assets/b126c0d8-fe88-4d75-93ee-4c7af0e74330" />
-   <img width="1487" height="350" alt="image" src="https://github.com/user-attachments/assets/f98b14a2-93cd-48a1-8bed-7a6de8027bb1" />
-   <img width="547" height="135" alt="image" src="https://github.com/user-attachments/assets/a58769fd-65d9-48a6-a716-1a5c5f435f84" />
-   <img width="569" height="172" alt="image" src="https://github.com/user-attachments/assets/33894747-91d0-4b16-b52e-13d44fde2b07" />
+   - Ảnh đầu vào:
+   - 
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/52764366-8f75-4ac0-8624-08eaf120a897" />
+   
+   - Kết quả detection: 
+   
+   <img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/3fb88c44-cbfa-4155-b1eb-12eef996f935" />
+   
+   - Kết quả ocr:
+   
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/b126c0d8-fe88-4d75-93ee-4c7af0e74330" />
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f98b14a2-93cd-48a1-8bed-7a6de8027bb1" />
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/a58769fd-65d9-48a6-a716-1a5c5f435f84" />
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/33894747-91d0-4b16-b52e-13d44fde2b07" />
+   
    **Kết quả kiểm thử nghiệm với ảnh bị nhiễu**
-    Ảnh đầu vào:
-   <img width="870" height="490" alt="image" src="https://github.com/user-attachments/assets/1650a32f-a5f8-44b1-b698-b15c811bb34f" />
-   Kết quả detection: 
-  <img width="1497" height="442" alt="image" src="https://github.com/user-attachments/assets/94d5f575-ec78-4fac-8a0a-26c8a202d08c" />
+   
+   - Ảnh đầu vào:
+     
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/1650a32f-a5f8-44b1-b698-b15c811bb34f" />
+   
+   -- Kết quả detection: 
+   
+   <img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/94d5f575-ec78-4fac-8a0a-26c8a202d08c" />
 
-   Kết quả ocr:
-   <img width="1509" height="840" alt="image" src="https://github.com/user-attachments/assets/12dba988-dd8f-4974-96da-057f570ba500" />
-   <img width="359" height="122" alt="image" src="https://github.com/user-attachments/assets/c170a738-8db7-40c7-89c9-163875235761" />
-   <img width="786" height="247" alt="image" src="https://github.com/user-attachments/assets/3b6d9056-96a5-4f3f-9bb8-614f0fe4e5d1" />
-   KẾT QUẢ TRÍCH XUẤT NÀY BỊ SAI HOÀN TOÀN
-   <img width="1524" height="496" alt="image" src="https://github.com/user-attachments/assets/9d901922-87a8-47f6-8217-361fba7b38de" />
- **ĐÁNH GIÁ**
- Hệ thống cần tối ưu cách truyền dữ liệu và xử lý dữ liệu đầu vào hiện tại tôi chưa tìm ra cách tối ưu tốt nhất cho toàn hệ thống 
-
+   - Kết quả ocr:
+   
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/12dba988-dd8f-4974-96da-057f570ba500" />
+   <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/c170a738-8db7-40c7-89c9-163875235761" />
+   <img width="500" height="247" alt="image" src="https://github.com/user-attachments/assets/3b6d9056-96a5-4f3f-9bb8-614f0fe4e5d1" />
+   
+   - KẾT QUẢ TRÍCH XUẤT NÀY BỊ SAI HOÀN TOÀN
+   
+   <img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/9d901922-87a8-47f6-8217-361fba7b38de" />
+   
 ## 🌐 Demo & Tài Nguyên
 
 | Tài Nguyên | Link |
@@ -278,17 +305,10 @@ Kết quả sau khi xử lý với gemini:
 
 ## 📝 Ghi Chú
 
-- 💾 Dự án sử dụng chủ yếu **Jupyter Notebook (98.8%)** và **Python (1.2%)**
-- 🎮 **GPU khuyến nghị** cho quá trình huấn luyện (giảm thời gian từ giờ xuống phút)
+- 💾 Dự án sử dụng chủ yếu **Python**
+- 🎮 **GPU khuyến nghị** 
 - ⚡ Chạy inference trên **CPU** vẫn có thể, tốc độ sẽ chậm hơn
-- 📚 Tham khảo thêm về [Faster R-CNN](https://arxiv.org/abs/1506.01497)
-
----
-
-## 📄 License
-
-MIT License - Xem [LICENSE](LICENSE) để biết chi tiết
-
+- 
 ---
 
 ## 👨‍💻 Tác Giả
